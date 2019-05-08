@@ -1,0 +1,9 @@
+[submodule "agsEngineLibrary"]
+	path = agsEngineLibrary
+	url = https://github.com/monkey0506/agsEngineLibrary
+[submodule "play_licensing_library"]
+	path = play_licensing_library
+	url = https://github.com/monkey0506/google_play_licensing_library
+[submodule "downloader_library"]
+	path = downloader_library
+	url = https://github.com/monkey0506/google_downloader_library

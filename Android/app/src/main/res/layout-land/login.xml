@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_centerInParent="true"
+    android:layout_height="fill_parent" android:weightSum="1" android:orientation="horizontal"
+    android:visibility="visible"
+    android:id="@+id/the_loading_screen">
+
+  <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/download_landscape"
+        android:scaleType="centerCrop" />
+
+  <LinearLayout
+      android:id="@+id/sign_in_bar"
+      style="@style/SignInOutBar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_centerHorizontal="true">
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/button_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+      <Button
+          style="@style/SignInButton"
+          android:onClick="onClick"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:width="110dp"
+          android:id="@+id/button_bg"
+          android:alpha="0"
+          android:text="Sign in" />
+    </com.google.android.gms.common.SignInButton>
+  </LinearLayout>
+</RelativeLayout>

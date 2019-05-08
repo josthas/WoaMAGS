@@ -1,0 +1,24 @@
+apply plugin: 'com.android.model.library'
+
+model {
+    android {
+        compileSdkVersion = 25
+        buildToolsVersion = "25.0.0"
+
+        defaultConfig {
+            minSdkVersion.apiLevel = 10
+            targetSdkVersion.apiLevel = 25
+        }
+
+        buildTypes {
+            release {
+                minifyEnabled = false
+                zipAlignEnabled = true
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+}

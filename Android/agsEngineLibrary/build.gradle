@@ -1,0 +1,72 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+apply plugin: 'com.android.model.library'
+
+model {
+    android {
+        compileSdkVersion = 25
+        buildToolsVersion = "25.0.0"
+
+        defaultConfig {
+            minSdkVersion.apiLevel = 10
+            targetSdkVersion.apiLevel = 25
+            versionCode 3406
+            versionName "3.4.0.6"
+        }
+        buildTypes {
+            release {
+                minifyEnabled = false
+                zipAlignEnabled = true
+            }
+            debug {
+                minifyEnabled = false
+            }
+        }
+    }
+
+    android.ndk {
+        moduleName = "native"
+    }
+
+    tasks {
+        // call regular ndk-build(.cmd) script from app directory
+        ndkBuild(Exec) {
+            if (!new File("$rootProject.projectDir/library/libs").exists()) {
+                // to force NDK build, delete libs folder
+                Properties properties = new Properties()
+                new File(project.rootDir, "local.properties").withInputStream {
+                    instr -> properties.load(instr)
+                }
+                def ndkDir = properties.getProperty("ndk.dir")
+                def ndkExt = (Os.isFamily(Os.FAMILY_WINDOWS) ? ".cmd" : "")
+                commandLine ndkDir + "/ndk-build" + ndkExt, '-C', file(project.rootDir).absolutePath
+            }
+            // commandLine MUST be set, echo nothing if libs folder exists
+            else if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+                commandLine "cmd", 'echo ""'
+            }
+            else {
+                commandLine 'echo ""'
+            }
+        }
+
+        // build a JAR so the native libraries can be built into the APK
+        nativeLibsToJar(Zip) {
+            dependsOn ndkBuild
+            destinationDir file("$rootProject.projectDir/build/native-libs")
+            baseName "native-libs"
+            extension "jar"
+            from fileTree(dir: "$rootProject.projectDir/library/libs", include: "*/*.so")
+            into "lib/"
+        }
+
+        withType(JavaCompile) {
+            compileTask -> compileTask.dependsOn nativeLibsToJar
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.google.android.gms:play-services-games:10.0.1'
+}

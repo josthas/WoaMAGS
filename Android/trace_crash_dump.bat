@@ -1,0 +1,3 @@
+call C:\Users\Joel\AppData\Local\Android\sdk\ndk-bundle\prebuilt\windows-x86_64\bin\ndk-stack -sym D:\B\Android\library\obj\local\armeabi-v7a -dump C:\Users\Joel\Desktop\crash.txt >> C:\Users\Joel\Desktop\crash_output.txt
+call C:\Users\Joel\AppData\Local\Android\sdk\ndk-bundle\prebuilt\windows-x86_64\bin\ndk-stack -sym D:\B\Android\library\obj\local\armeabi-v7a -dump C:\Users\Joel\Desktop\crash.txt
+pause

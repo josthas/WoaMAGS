@@ -1,0 +1,38 @@
+<resources>
+    <!--
+        TODO: define string RSA_public_key and int[] ExpansionDownloaderServiceSALT
+
+        SA_public_key is the Base64-encoded RSA public key provided on the
+        Google Play Developer Console (you may need to upload an APK first!).
+
+        ExpansionDownloaderServiceSALT is defined as an int[] rather than
+         a byte[] so that you can use a resource XML file with integer-array.
+         Values are expected to be a valid byte, so should be in the range
+         of -128 to 127.
+
+         These values are implemented in ExpansionDownloaderService.java.
+         You may want to define your values in a separate XML file, such as
+         private.xml, which is already a part of this project's .gitignore.
+    -->
+    <string name="RSA_public_key" translatable="false">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi7jw1fW5YNWKP7N7sG9NakZkOPQM18gjLHJVkB+9/9c0cS6nBjTk8nPBev9cMfubPwhNi5OEpOos+pmrRlxI1UFydwvckhpZpMOT53kCnHHvOD2tsClI7V9fvScfIw0dwgzOZvdQOWY3H7PyMLyDJYEKF5m/EQDzjZ2Q4CbN9R/vU04VUkmdZYS9hOQ+jOkYxQPy5dxs+aEV5hfFzxphogIiz5+D++8Rkhga52VeohJsronDhB/asAQbjJmNwNnConPTWE91JpaPnfom+H/fu90Qqa4cvt2s/X1gJgnE8QdjMdkgydyM4ZPgm1KAUORBNGZvxdgCU1M6Y/ZPjK3QyQIDAQAB</string>
+    <integer-array
+    name="ExpansionDownloaderServiceSALT">
+    <item>1</item>
+    </integer-array>
+    <string name="app_name" translatable="false">Kathy Rain</string>            <!-- app name -->
+    <string name="app_id" translatable="false">223504730786</string>
+    <string name="game_file_name" translatable="false">KathyRain_Mobile.exe</string> <!-- game EXE or data file name -->
+    <!-- EXPANSION DOWNLOADER STRINGS -->
+    <string name="text_button_resume">Resume</string>
+    <string name="text_button_pause">Pause</string>
+    <string name="text_wifiOnly">WiFi Only</string>
+    <string name="text_useCellular">Use Cellular</string>
+    <string name="text_wifiSettings">Wifi Settings</string>
+    <!-- Expansion Downloader "Default" Strings -->
+    <!-- Used in the designer, but not shown at runtime -->
+    <string name="text_default_status">Status</string>
+    <string name="text_default_progressAverageSpeed">Progress Average Speed</string>
+    <string name="text_default_progressFraction">Progress Fraction</string>
+    <string name="text_default_progressPercentage">Progress Percentage</string>
+    <string name="text_default_progressTimeRemaining">Progress Time Remaining</string>
+</resources>

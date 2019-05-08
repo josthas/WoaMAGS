@@ -1,0 +1,4 @@
+include ':app', ':agsEngineLibrary'
+include ':play_licensing_library'
+include ':downloader_library'
+include ':zip_file'

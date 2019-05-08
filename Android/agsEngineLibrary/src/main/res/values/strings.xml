@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="CONFIG_AUDIO_ENABLED">3</string>
+    <string name="CONFIG_AUDIO_THREADED">4</string>
+    <string name="CONFIG_MIDI_ENABLED">6</string>
+    <string name="CONFIG_MIDI_PRELOAD">7</string>
+    <string name="CONFIG_VIDEO_FRAMEDROP">8</string>
+    <string name="CONFIG_GFX_RENDERER">9</string>
+    <string name="CONFIG_GFX_SMOOTHING">10</string>
+    <string name="CONFIG_GFX_SCALING">11</string>
+    <string name="CONFIG_GFX_SS">12</string>
+    <string name="CONFIG_ROTATION">13</string>
+    <string name="CONFIG_ENABLED">14</string>
+    <string name="CONFIG_DEBUG_FPS">15</string>
+    <string name="CONFIG_GFX_SMOOTH_SPRITES">16</string>
+    <string name="CONFIG_TRANSLATION">17</string>
+    <string name="CONFIG_DEBUG_LOGCAT">18</string>
+    <string name="CONFIG_MOUSE_METHOD">19</string>
+    <string name="CONFIG_MOUSE_LONGCLICK">20</string>
+    <string name="toggle_keyboard">Toggle keyboard</string>
+    <string name="exit_game">Exit game</string>
+
+    <string-array name="AchievementList">
+        <item>"FinishDayOne"</item>
+        <item>"CgkIopWuz8AGEAIQAQ"</item>
+        <item>"FinishDayTwo"</item>
+        <item>"CgkIopWuz8AGEAIQAg"</item>
+        <item>"FinishDayThree"</item>
+        <item>"CgkIopWuz8AGEAIQAw"</item>
+        <item>"FinishDayFour"</item>
+        <item>"CgkIopWuz8AGEAIQBA"</item>
+        <item>"FinishGame"</item>
+        <item>"CgkIopWuz8AGEAIQBQ"</item>
+        <item>"Procrastinator"</item>
+        <item>"CgkIopWuz8AGEAIQBg"</item>
+        <item>"EnjoyingTheScenery"</item>
+        <item>"CgkIopWuz8AGEAIQBw"</item>
+        <item>"Hotwheels"</item>
+        <item>"CgkIopWuz8AGEAIQCA"</item>
+        <item>"Aww"</item>
+        <item>"CgkIopWuz8AGEAIQCQ"</item>
+        <item>"Undateable"</item>
+        <item>"CgkIopWuz8AGEAIQCg"</item>
+        <item>"MrBear"</item>
+        <item>"CgkIopWuz8AGEAIQCw"</item>
+        <item>"Nocturnal"</item>
+        <item>"CgkIopWuz8AGEAIQDA"</item>
+        <item>"HowYouDoing"</item>
+        <item>"CgkIopWuz8AGEAIQDQ"</item>
+        <item>"RestingScowlyFace"</item>
+        <item>"CgkIopWuz8AGEAIQDg"</item>
+        <item>"Pyromaniac"</item>
+        <item>"CgkIopWuz8AGEAIQDw"</item>
+        <item>"PassiveSmoking"</item>
+        <item>"CgkIopWuz8AGEAIQEA"</item>
+        <item>"FilmBuff"</item>
+        <item>"CgkIopWuz8AGEAIQEQ"</item>
+        <item>"Heretic"</item>
+        <item>"CgkIopWuz8AGEAIQEg"</item>
+        <item>"TriggerHappy"</item>
+        <item>"CgkIopWuz8AGEAIQEw"</item>
+        <item>"HookedOnCorleys"</item>
+        <item>"CgkIopWuz8AGEAIQFA"</item>
+    </string-array>
+</resources>

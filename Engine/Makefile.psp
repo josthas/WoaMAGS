@@ -1,0 +1,74 @@
+# Build the engine as an EBOOT that can only run ac2game.dat in the current directory
+STANDALONE = 1
+
+# Enable gprof profiling in the engine, requires a rebuild of all files
+PROFILING = 0
+
+# Disable MOD/XM playback?
+NO_MOD_PLAYBACK = 0
+
+# The name of the engine prx must be known to the launcher and the engine too
+TARGET = ags321
+
+# Include plugins in the engine?
+WITH_BUILTIN_PLUGINS = 0
+
+BASE_PLATFORM = \
+platform/psp/acplpsp.cpp \
+../PSP/kernel/kernel.c \
+../PSP/exception/utility/exception.c \
+../PSP/malloc/malloc.c \
+../PSP/suspend/suspend.c
+
+include Makefile-objs
+OBJS_C_CPP = $(ALFONT) $(ALMP3) $(ALOGG) $(APEG) $(AASTR) $(BASE) $(BASE_PLATFORM) $(COMMON)
+
+ifeq ($(WITH_BUILTIN_PLUGINS), 1)
+OBJS += $(PLUGINS)
+CFLAGS += -DBUILTIN_PLUGINS
+endif
+
+OBJS_C = $(OBJS_C_CPP:.cpp=.o)
+OBJS = $(OBJS_C:.c=.o)
+
+INCDIR = ../Common ../Common/libinclude $(shell psp-config --pspdev-path)/psp/include/freetype2
+LIBDIR = ../PSP/lib
+CFLAGS = -O2 -g -G0 -msingle-float -ffast-math -Wfatal-errors -DALLEGRO_STATICLINK -DAGS_STRICT_ALIGNMENT -DAGS_INVERTED_COLOR_ORDER -DPSP_VERSION -DDISABLE_MPEG_AUDIO -DUSE_TREMOR
+CXXFLAGS = $(CFLAGS) -fno-rtti -Wno-write-strings
+ASFLAGS = $(CFLAGS)
+LIBS = -lalleg -lalleg-main -lfreetype -lz -lvorbisidec -ltheoradec -logg -lc -lstdc++ -lm
+
+ifeq ($(NO_MOD_PLAYBACK), 1)
+CFLAGS += -DPSP_NO_MOD_PLAYBACK 
+CXXFLAGS += -DPSP_NO_MOD_PLAYBACK
+else
+LIBS += -laldmb -ldumb
+endif
+
+LIBS += -lpsppower -lpspdebug -lpspgu -lpspctrl -lpspge -lpspdisplay -lpsprtc -lpspaudio -lpspsystemctrl_user -lpspmath -lpspfpu
+LDFLAGS = -Wl,--allow-multiple-definition
+
+ifeq ($(PROFILING), 1)
+CFLAGS += -pg -DPSP_ENABLE_PROFILING
+CXXFLAGS += -pg -DPSP_ENABLE_PROFILING
+LIBS += -lpspprof
+else
+CXXFLAGS += -fomit-frame-pointer
+endif
+
+ifeq ($(STANDALONE), 1)
+EXTRA_TARGETS = EBOOT.PBP
+PSP_EBOOT_TITLE = Adventure Game Studio 3.21
+PSP_EBOOT_ICON = ../PSP/media/ICON0.PNG
+PSP_EBOOT_UNKPNG = ../PSP/media/PIC0.PNG
+PSP_EBOOT_PIC1 = ../PSP/media/PIC1.PNG
+PSP_EBOOT_SND0 = NULL
+endif
+
+PSP_LARGE_MEMORY = 1
+PSP_FW_VERSION = 371
+BUILD_PRX = 1
+ENCRYPT = 0
+
+PSPSDK=$(shell psp-config --pspsdk-path)
+include $(PSPSDK)/lib/build.mak

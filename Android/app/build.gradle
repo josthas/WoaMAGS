@@ -1,0 +1,36 @@
+apply plugin: 'com.android.model.application'
+
+model {
+    android {
+        compileSdkVersion = 25
+        buildToolsVersion = "25.0.0"
+        defaultConfig {
+            applicationId 'com.rawfury.kathy'
+            minSdkVersion.apiLevel = 16
+            targetSdkVersion.apiLevel = 25
+            versionCode 20
+            versionName "1.0.7d"
+        }
+
+        buildTypes {
+            release {
+                minifyEnabled = false
+                zipAlignEnabled = true
+            }
+            debug {
+                minifyEnabled = false
+            }
+        }
+        productFlavors {
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.google.android.gms:play-services-games:10.0.1'
+    compile project(':zip_file')
+    compile project(':agsEngineLibrary')
+    compile project(':downloader_library')
+    compile fileTree(dir: "$rootProject.projectDir/build/native-libs", include: 'native-libs.jar')
+}

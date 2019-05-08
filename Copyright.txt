@@ -1,0 +1,18 @@
+Adventure Game Studio (AGS)
+Copyright (C) 1999-2012 by the following:
+
+Chris Jones
+Bernhard Rosenkraenzer
+Cristian Morales Vega
+Ivan Mogilko
+Jochen Schleu
+Janet Gilbert
+Piotr Wieczorek
+Scott Baker
+Steve McCrea
+Sunit Das
+Tzach Shabtay
+
+Members of development team would like to thank:
+
+Alyssa Milburn and Nick Sonneveld, for inspiration and ideas on refactoring AGS Engine

@@ -18,14 +18,14 @@ but a workalike plugin created by JJS for the AGS engine PSP port.
 
 #include "plugin/agsplugin.h"
 
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+
 #if defined(BUILTIN_PLUGINS)
 namespace agsflashlight {
 #endif
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
 
 #if defined(PSP_VERSION)
 #include <pspsdk.h>

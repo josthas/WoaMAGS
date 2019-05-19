@@ -63,6 +63,12 @@
 
 #endif // WINDOWS_VERSION
 
+enum
+{
+    kShift    = 16,
+    kUnit     = 1 << kShift
+};
+
 
 #define fixed_t int32_t // fixed point type
 #define color_t int32_t

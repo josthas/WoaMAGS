@@ -94,11 +94,11 @@ void GraphicsDriverBase::OnModeReleased()
 
 void GraphicsDriverBase::OnScalingChanged()
 {
-    PGfxFilter filter = GetGraphicsFilter();
+    /*PGfxFilter filter = GetGraphicsFilter();
     if (filter)
         _filterRect = filter->SetTranslation(_srcRect.GetSize(), _dstRect);
     else
-        _filterRect = Rect();
+        _filterRect = Rect();*/
     _scaling.Init(_srcRect.GetSize(), _dstRect);
 }
 
@@ -116,7 +116,7 @@ void GraphicsDriverBase::OnSetRenderFrame(const Rect &dst_rect)
 
 void GraphicsDriverBase::OnSetFilter()
 {
-    _filterRect = GetGraphicsFilter()->SetTranslation(Size(_srcRect.GetSize()), _dstRect);
+    //_filterRect = GetGraphicsFilter()->SetTranslation(Size(_srcRect.GetSize()), _dstRect);
 }
 
 Bitmap *GraphicsDriverBase::ReplaceBitmapWithSupportedFormat(Bitmap *old_bmp)

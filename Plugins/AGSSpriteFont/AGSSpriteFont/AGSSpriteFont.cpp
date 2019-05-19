@@ -33,7 +33,7 @@
 #define DEFAULT_RGB_B_SHIFT_32  0
 #define DEFAULT_RGB_A_SHIFT_32  24
 
-#define abs(a)						 ((a)<0 ? -(a) : (a))				 
+//#define abs(a)						 ((a)<0 ? -(a) : (a))				 
 #define ChannelBlend_Normal(B,L)     ((uint8)(B))
 #define ChannelBlend_Lighten(B,L)    ((uint8)((L > B) ? L:B))
 #define ChannelBlend_Darken(B,L)     ((uint8)((L > B) ? B:L))

@@ -23,6 +23,39 @@
 //namespace Common
 //{
 
+struct Point
+{
+    int X;
+    int Y;
+
+    Point()
+    {
+        X = 0;
+        Y = 0;
+    }
+
+    Point(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+
+    inline bool operator ==(const Point &p) const
+    {
+        return X == p.X && Y == p.Y;
+    }
+
+    inline bool operator !=(const Point &p) const
+    {
+        return X != p.X || Y != p.Y;
+    }
+
+    inline Point operator +(const Point &p) const
+    {
+        return Point(X + p.X, Y + p.Y);
+    }
+};
+
 struct Line
 {
 	int X1;
@@ -119,10 +152,22 @@ struct Rect
 		return Bottom - Top + 1;
 	}
 
+        inline Size GetSize() const
+        {
+        return Size(GetWidth(), GetHeight());
+        }
+
+	inline bool IsEmpty() const
+        {
+        return Right < Left || Bottom < Top;
+        }
+
 	inline bool IsInside(int x, int y) const
 	{
 		return x >= Left && y >= Top && (x <= Right) && (y <= Bottom);
 	}
+
+
 };
 
 // Helper factory function

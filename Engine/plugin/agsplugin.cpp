@@ -65,7 +65,7 @@ namespace BitmapHelper = AGS::Common::BitmapHelper;
 #include "../Plugins/agsblend/agsblend.h"
 #include "../Plugins/ags_snowrain/ags_snowrain.h"
 #include "../Plugins/ags_parallax/ags_parallax.h"
-#include "../Plugins/agsspritefont/agsspritefont/agsspritefont.h"
+#include "../Plugins/AGSSpriteFont/AGSSpriteFont/AGSSpriteFont.h"
 #include "../Plugins/AGSteam/AGSteamPlugin.h"
 #include "../Plugins/AGSGalaxy/AGGalaxyPlugin.h"
 #ifdef IOS_VERSION

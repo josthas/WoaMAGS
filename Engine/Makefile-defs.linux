@@ -12,12 +12,12 @@ ifeq ($(BUILD32), 1)
   override CXXFLAGS += -m32 $(shell getconf LFS_CFLAGS)
   override LDFLAGS += -m32
 else
-  LIBDIR = ../Linux/lib64
+  LIBDIR = ../Linux/lib64 ../Plugins/AGSSpriteFont
   RPATH=lib64
 endif
 
-CFLAGS := -O2 -g -fsigned-char -Wfatal-errors -DNDEBUG -DAGS_HAS_CD_AUDIO -DAGS_CASE_SENSITIVE_FILESYSTEM -DALLEGRO_STATICLINK -DLINUX_VERSION -DDISABLE_MPEG_AUDIO -DBUILTIN_PLUGINS -DRTLD_NEXT $(shell pkg-config --cflags freetype2) $(CFLAGS)
-CXXFLAGS := -fno-rtti -Wno-write-strings $(CXXFLAGS)
+CFLAGS := -O2 -g -fsigned-char -Wfatal-errors -DNDEBUG -DAGS_RUNTIME_PATCH_ALLEGRO -DAGS_HAS_CD_AUDIO -DAGS_CASE_SENSITIVE_FILESYSTEM -DALLEGRO_STATICLINK -DLINUX_VERSION -DDISABLE_MPEG_AUDIO -DBUILTIN_PLUGINS -DRTLD_NEXT $(shell pkg-config --cflags freetype2) $(CFLAGS) -fPIC
+CXXFLAGS := -fno-rtti -Wno-write-strings $(CXXFLAGS) -fPIC
 LIBS = -rdynamic -lalleg -laldmb -ldumb -Wl,-Bdynamic -ltheoradec -logg 
 
 ifeq ($(USE_TREMOR), 1)
@@ -26,7 +26,7 @@ ifeq ($(USE_TREMOR), 1)
 else
   LIBS += -lvorbis
 endif
-LIBS += -lvorbisfile -lfreetype -logg -ldl -lpthread -lm -lc -lstdc++
+LIBS += -lvorbisfile -lfreetype -logg -ldl -lpthread -lm -lc -lstdc++ #-lagsspritefont
 
 ifeq ($(ALLEGRO_MAGIC_DRV), 1)
   CFLAGS += -DALLEGRO_MAGIC_DRV
@@ -43,7 +43,7 @@ AR ?= ar
 CFLAGS   += $(addprefix -I,$(INCDIR))
 CXXFLAGS += $(CFLAGS)
 ASFLAGS  += $(CFLAGS)
-LDFLAGS  += -Wl,--as-needed $(addprefix -L,$(LIBDIR))
+LDFLAGS  += -Wl,--as-needed $(addprefix -L,$(LIBDIR)) -fPIC
 
 ifneq (,$(RPATH))
   LDFLAGS  += -Wl,-rpath,'$$ORIGIN/$(RPATH)'

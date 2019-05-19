@@ -18,14 +18,14 @@ but a workalike plugin created by JJS for the AGS engine PSP port.
 
 #include "plugin/agsplugin.h"
 
-#if defined(BUILTIN_PLUGINS)
-namespace ags_snowrain {
-#endif
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+
+#if defined(BUILTIN_PLUGINS)
+namespace ags_snowrain {
+#endif
 
 #ifdef PSP_VERSION
 #include <pspsdk.h>

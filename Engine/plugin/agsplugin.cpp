@@ -65,7 +65,7 @@ namespace BitmapHelper = AGS::Common::BitmapHelper;
 #include "../Plugins/agsblend/agsblend.h"
 #include "../Plugins/ags_snowrain/ags_snowrain.h"
 #include "../Plugins/ags_parallax/ags_parallax.h"
-#include "../Plugins/agsspritefont/agsspritefont/agsspritefont.h"
+#include "../Plugins/AGSSpriteFont/AGSSpriteFont/AGSSpriteFont.h"
 #include "../Plugins/AGSteam/AGSteamPlugin.h"
 #include "../Plugins/AGSGalaxy/AGGalaxyPlugin.h"
 #ifdef IOS_VERSION
@@ -924,7 +924,7 @@ bool pl_use_builtin_plugin(EnginePlugin* apl)
         apl->builtin = true;
         return true;
     }
-	else if (strncmp(apl->filename, "agsteam", strlen("agsteam")) == 0)
+    /*	else if (strncmp(apl->filename, "agsteam", strlen("agsteam")) == 0)
 	{
 		apl->engineStartup = ags_steam::AGS_EngineStartup;
 		apl->engineShutdown = ags_steam::AGS_EngineShutdown;
@@ -944,7 +944,7 @@ bool pl_use_builtin_plugin(EnginePlugin* apl)
 		apl->available = true;
 		apl->builtin = true;
 		return true;
-	}
+	} */
 #ifdef IOS_VERSION
     else if (strncmp(apl->filename, "agstouch", strlen("agstouch")) == 0)
     {

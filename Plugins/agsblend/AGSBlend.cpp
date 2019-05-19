@@ -45,7 +45,7 @@ typedef unsigned char uint8;
 #define max(x,y) (((x) > (y)) ? (x) : (y))
 #endif
 
-#define abs(a)						 ((a)<0 ? -(a) : (a))				 
+//#define abs(a)						 ((a)<0 ? -(a) : (a))				 
 #define ChannelBlend_Normal(B,L)     ((uint8)(B))
 #define ChannelBlend_Lighten(B,L)    ((uint8)((L > B) ? L:B))
 #define ChannelBlend_Darken(B,L)     ((uint8)((L > B) ? B:L))

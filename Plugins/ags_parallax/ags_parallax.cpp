@@ -18,14 +18,14 @@ but a workalike plugin created by JJS for the AGS engine ports.
 
 #include "plugin/agsplugin.h"
 
-#if defined(BUILTIN_PLUGINS)
-namespace ags_parallax {
-#endif
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+
+#if defined(BUILTIN_PLUGINS)
+namespace ags_parallax {
+#endif
 
 //#define DEBUG
 //#define ENABLE_SAVING // The original plugin does not save any data!

@@ -39,12 +39,12 @@
          }
       #endif
    #endif
-
+   
    #ifndef ALLEGRO_NO_FIX_ALIASES
-      AL_ALIAS(fixed fadd(fixed x, fixed y), fixadd(x, y))
-      AL_ALIAS(fixed fsub(fixed x, fixed y), fixsub(x, y))
-      AL_ALIAS(fixed fmul(fixed x, fixed y), fixmul(x, y))
-      AL_ALIAS(fixed fdiv(fixed x, fixed y), fixdiv(x, y))
+      //AL_ALIAS(fixed fadd(fixed x, fixed y), fixadd(x, y))
+      //AL_ALIAS(fixed fsub(fixed x, fixed y), fixsub(x, y))
+      //AL_ALIAS(fixed fmul(fixed x, fixed y), fixmul(x, y))
+      //AL_ALIAS(fixed fdiv(fixed x, fixed y), fixdiv(x, y))
       AL_ALIAS(int fceil(fixed x), fixceil(x))
       AL_ALIAS(int ffloor(fixed x), fixfloor(x))
       AL_ALIAS(fixed fcos(fixed x), fixcos(x))

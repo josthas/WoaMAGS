@@ -924,7 +924,7 @@ bool pl_use_builtin_plugin(EnginePlugin* apl)
         apl->builtin = true;
         return true;
     }
-	else if (strncmp(apl->filename, "agsteam", strlen("agsteam")) == 0)
+    /*	else if (strncmp(apl->filename, "agsteam", strlen("agsteam")) == 0)
 	{
 		apl->engineStartup = ags_steam::AGS_EngineStartup;
 		apl->engineShutdown = ags_steam::AGS_EngineShutdown;
@@ -944,7 +944,7 @@ bool pl_use_builtin_plugin(EnginePlugin* apl)
 		apl->available = true;
 		apl->builtin = true;
 		return true;
-	}
+	} */
 #ifdef IOS_VERSION
     else if (strncmp(apl->filename, "agstouch", strlen("agstouch")) == 0)
     {

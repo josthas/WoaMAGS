@@ -16,9 +16,9 @@
 #include "gfx/ali3dsw.h"
 #include "gfx/gfxfilter_allegro.h"
 
-#if defined(WINDOWS_VERSION) || defined(ANDROID_VERSION) || defined(IOS_VERSION)
-#include "gfx/ali3dogl.h" // TODO: support on Linux too
-#include "gfx/gfxfilter_ogl.h"
+#if defined(WINDOWS_VERSION) || defined(ANDROID_VERSION) || defined(IOS_VERSION) || defined(LINUX_VERSION)
+//#include "gfx/ali3dogl.h" // TODO: support on Linux too
+//#include "gfx/gfxfilter_ogl.h"
 #endif
 
 #if defined(WINDOWS_VERSION)
@@ -62,8 +62,8 @@ IGfxDriverFactory *GetGfxDriverFactory(const String id)
         )
         return OGL::OGLGraphicsFactory::GetFactory();
 #endif
-    if (id.CompareNoCase("Software") == 0)
-        return ALSW::ALSWGraphicsFactory::GetFactory();
+    //if (id.CompareNoCase("Software") == 0)
+    //    return ALSW::ALSWGraphicsFactory::GetFactory();
     set_allegro_error("No graphics factory with such id: %s", id.GetCStr());
     return NULL;
 }

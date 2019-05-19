@@ -2,8 +2,6 @@ UNAME := $(shell uname)
 
 INCDIR = ../../Engine ../../Common
 LIBDIR =
-CC = gcc
-CXX = g++
 CFLAGS = -fPIC -fvisibility=hidden -O2 -g -Wall
 LIBS = -lm -lstdc++
 

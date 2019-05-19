@@ -78,33 +78,33 @@ VariableWidthSpriteFontRenderer *vWidthRenderer = 0;
 void SetSpriteFont(int fontNum, int sprite, int rows, int columns, int charWidth, int charHeight, int charMin, int charMax, bool use32bit)
 {
 	//OutputDebugString(L"AGSSpriteFont: SetSpriteFont");
-	fontRenderer->SetSpriteFont(fontNum, sprite, rows, columns, charWidth, charHeight, charMin, charMax, use32bit);
-	engine->ReplaceFontRenderer(fontNum, fontRenderer);
+	//fontRenderer->SetSpriteFont(fontNum, sprite, rows, columns, charWidth, charHeight, charMin, charMax, use32bit);
+	//engine->ReplaceFontRenderer(fontNum, fontRenderer);
 }
 
 void SetVariableSpriteFont(int fontNum, int sprite)
 {
 	//OutputDebugString(L"AGSSpriteFont: SetVariableFont");
-	vWidthRenderer->SetSprite(fontNum, sprite);
-	engine->ReplaceFontRenderer(fontNum, vWidthRenderer);
+	//vWidthRenderer->SetSprite(fontNum, sprite);
+	//engine->ReplaceFontRenderer(fontNum, vWidthRenderer);
 }
 
 void SetGlyph(int fontNum, int charNum, int x, int y, int width, int height)
 {
 	//OutputDebugString(L"AGSSpriteFont: SetGlyph");
-	vWidthRenderer->SetGlyph(fontNum, charNum, x,y,width,height);
+	//vWidthRenderer->SetGlyph(fontNum, charNum, x,y,width,height);
 }
 
 void SetSpacing(int fontNum, int spacing)
 {
 	//OutputDebugString(L"AGSSpriteFont: SetSpacing");
-	vWidthRenderer->SetSpacing(fontNum, spacing);
+	//vWidthRenderer->SetSpacing(fontNum, spacing);
 }
 
 void SetLineHeightAdjust(int fontNum, int LineHeight, int SpacingHeight, int SpacingOverride)
 {
 	//OutputDebugString(L"AGSSpriteFont: SetSpacing");
-	vWidthRenderer->SetLineHeightAdjust(fontNum, LineHeight, SpacingHeight, SpacingOverride);
+	//vWidthRenderer->SetLineHeightAdjust(fontNum, LineHeight, SpacingHeight, SpacingOverride);
 }
 //==============================================================================
 
@@ -200,7 +200,7 @@ void AGS_EditorLoadGame(char *buffer, int bufsize)            //*** optional ***
 
 void AGS_EngineStartup(IAGSEngine *lpEngine)
 {
-	engine = lpEngine;
+	/*engine = lpEngine;
 	engine->PrintDebugConsole("AGSSpriteFont: Init fixed width renderer");
 	fontRenderer = new SpriteFontRenderer(engine);
 	engine->PrintDebugConsole("AGSSpriteFont: Init vari width renderer");
@@ -215,7 +215,7 @@ void AGS_EngineStartup(IAGSEngine *lpEngine)
 	REGISTER(SetVariableSpriteFont)
 	REGISTER(SetGlyph)
 	REGISTER(SetSpacing)
-	REGISTER(SetLineHeightAdjust)
+	REGISTER(SetLineHeightAdjust)*/
 }
 
 //------------------------------------------------------------------------------
@@ -226,8 +226,8 @@ void AGS_EngineShutdown()
 	// This gives you a chance to free any memory and do any cleanup
 	// that you need to do before the engine shuts down.
 
-	delete fontRenderer;
-	delete vWidthRenderer;
+	//delete fontRenderer;
+	//delete vWidthRenderer;
 }
 
 void AGS_EngineInitGfx(const char *driverID, void *data)
